@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/auth';
 
 class LoginPage extends Component {
-  submit = data => this.props.login(data).then(() => this.props.history.push('/'));
+  submit = data => this.props.login(data).then(() => this.props.history.push('/dashboard'));
 
   render() {
     return (
@@ -19,9 +19,9 @@ class LoginPage extends Component {
 LoginPage.propTypes = {
   // Provided by the react-router
   history: PropTypes.shape({
-    push: PropTypes.func.isRequired,
+    push: PropTypes.func.isRequired
   }).isRequired,
   // provided from the store
-  login: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired
 };
 export default connect(null, { login })(LoginPage);
